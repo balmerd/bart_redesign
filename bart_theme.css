@@ -137,10 +137,15 @@ body, [role="main"], .main {
   float: left;
   height: 5rem;
   margin-bottom: 1rem;
+  /* redesign */
+  z-index: 3;
+  background-color: #0196cd;
 }
 .homepage .topic:hover {
   border-color: #aaa;
   background-color: aliceblue;
+  /* redesign */
+  background-color: #0196cd;
 }
 .homepage .topic-title {
   margin-top: 5px;
@@ -160,9 +165,11 @@ body, [role="main"], .main {
   background-color: aliceblue;
   z-index: 999;
   /* redesign */
+  z-index: 2;
   color: #fff;
   border-top: 1px solid #aaa;
   background-color: #0196cd;
+  min-height: 140px;
 }
 .dataset-menu-item {
   margin: 0;
@@ -259,32 +266,26 @@ body, [role="main"], .main {
 /* https://stackoverflow.com/questions/16180107/arrow-box-with-css */
 .arrow {
   width: 0;
-  height: 100px;
-  background-color: #ccc;
-  /* border: 1px solid #999; */
   position: relative;
-}
-.arrow:after {
-  content: '';
-  position: absolute;
-  top: -1px;
-  /* left: 128px; */
-  left: -100px;
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  /* border-left: 12px solid #000; */
-  border-right: 50px solid #0196cd;
+  z-index: 1;
 }
 .arrow:before {
   content: '';
   position: absolute;
   top: -1px;
-  /* left: 129px; */
-  left: -100px;
+  left: -142px;
   width: 0;
   height: 0;
-  border: 50px solid transparent;
-  /* border-left: 12px solid #999; */
-  border-right: 50px solid #999;
+  border: 71px solid transparent;
+  border-right: 71px solid #008;
+}
+.arrow:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -142px;
+  width: 0;
+  height: 0;
+  border: 71px solid transparent;
+  border-right: 71px solid #008;
 }

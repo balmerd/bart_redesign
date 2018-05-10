@@ -18,24 +18,14 @@ $(document).ready(function() {
       minHeight: height + 40 + 2 // including border
     };
 
-    // TODO: need to render dataset-menu into invisible div to calc height (width ???)
-
-    // var menu_items = datasets.map(function(dataset) {
-    //   var url = '/dataset/' + dataset.name + '/resource/' + dataset.resource_id;
-    //   return '<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>';
-    // });
+    var menu_items = datasets.map(function(dataset) {
+      var url = '/dataset/' + dataset.name + '/resource/' + dataset.resource_id;
+      return '<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>';
+    });
 
     $('.topic2').addClass('behind-other-topics');
 
-    var menu = [];
-    menu.push('<li><a href="#">Automatic Fare Collection (Vendors)</a></li>');
-    menu.push('<li><a href="#">Automatic Fare Collection (Gates)</a></li>');
-    menu.push('<li><a href="#">Car Availability at 4AM</a></li>');
-    menu.push('<li><a href="#">Customers on Time</a></li>');
-    menu.push('<li><a href="#">Elevators in Service (Garage)</a></li>');
-
-    // this$.append('<div class="dataset-menu" style="'+ style+ '">' + menu_items.join('') + '</div>');
-    $('<div class="dataset-menu"><div class="arrow"><ul>' + menu.join('') +'<ul></div></div>').css(style).appendTo(this$);
+    $('<div class="dataset-menu"><div class="arrow"><ul>' + menu_items.join('') +'<ul></div></div>').css(style).appendTo(this$);
 
     this$.removeClass('behind-other-topics');
 

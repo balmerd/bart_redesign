@@ -155,18 +155,21 @@ body, [role="main"], .main {
 
 .dataset-menu {
   position: absolute;
-  height: auto;
+  /* height: auto; /* TODO: set height to $('.arrow').outerHeight() */ */
   list-style: none;
   border: 1px solid #aaa;
   border-top: 0;
   background-color: aliceblue;
-  z-index: 999;
+  /* z-index: 999; */
   /* redesign */
   z-index: 2;
   color: #fff;
   border-top: 1px solid #aaa;
   background-color: #0196cd;
   min-height: 140px;
+  /* redesign */
+   width: auto;
+   min-width: 10rem;
 }
 .dataset-menu-item {
   margin: 0;
@@ -264,7 +267,10 @@ body, [role="main"], .main {
 .arrow {
   position: relative;
   width: 0;
-  height: 100%;
+  width: 100%; /* TODO: adjust based on menu items */
+  height: auto;
+  min-height: 100%;
+  text-align: left;
   z-index: 999;
 }
 .arrow:before {
@@ -305,9 +311,11 @@ body, [role="main"], .main {
   /* redesign */
   color: #fff;
   background-color: #0196cd;
+  font-size: 0.7rem;
+
 }
 .homepage .topic2:hover {
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 .homepage .topic2-container {
   z-index: 999; /* so that arrow is under the box */
@@ -321,8 +329,21 @@ body, [role="main"], .main {
   text-align: center;
 }
 .homepage .topic2 img {
-  height: 50px;
+  height: 52px;
 }
 .behind-other-topics {
   z-index: 1 !important;
+}
+.dataset-menu ul {
+  list-style: none;
+  margin-left: 0;
+  display: inline-block;
+  max-width: 10rem;
+  padding: 0.5rem 1rem;
+}
+.dataset-menu li {
+  padding-bottom: 1rem;
+}
+.dataset-menu a {
+  color: #fff;
 }

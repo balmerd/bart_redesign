@@ -265,9 +265,9 @@ body, [role="main"], .main {
 } */
 /* https://stackoverflow.com/questions/16180107/arrow-box-with-css */
 .arrow {
-  width: 0;
   position: relative;
-  z-index: 1;
+  width: 0;
+  z-index: 999;
 }
 .arrow:before {
   content: '';
@@ -278,6 +278,7 @@ body, [role="main"], .main {
   height: 0;
   border: 71px solid transparent;
   border-right: 71px solid #008;
+  z-index: 999;
 }
 .arrow:after {
   content: '';
@@ -288,4 +289,38 @@ body, [role="main"], .main {
   height: 0;
   border: 71px solid transparent;
   border-right: 71px solid #008;
+  z-index: 999;
+}
+.homepage .topics-wrapper {
+  padding-left: 5rem; /* assumes 940px width */
+}
+.homepage .topic2 {
+  display: inline-block;
+  margin-right: 0.75rem;
+  width: 115px;
+  height: 6rem;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #fff; /* not visible, but takes up the space REMOVE THIS */
+  margin-bottom: 1rem;
+  /* redesign */
+  background-color: #ccc;
+}
+.homepage .topic2:hover {
+  border-color: #aaa;
+  background-color: aliceblue;
+}
+.homepage .topic2-container {
+  z-index: 999;
+  padding: 10px 4px;
+  position: relative;
+  background-color: inherit; /* so that arrow is under the box */
+}
+.homepage .topic2-title {
+  margin-top: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+.homepage .topic2 img {
+  height: 50px;
 }

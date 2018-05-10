@@ -2,11 +2,27 @@ $(document).ready(function() {
 
   var wasFocused = false;
 
-  $('.topic2').on('mouseover', '.dataset-menu-item', function() { // fade other menu items
-    // $(this).siblings().addClass('unfocused'); // all but "this"
+  // show topic page on click
+  $('.topic2 img').click(function() {
+    window.location.href = $(this).data().url;
+  });
+
+  // hide Organizations filter
+  $('section.module').each(function() {
+    var text = $(this).text().trim();
+
+    if ((/Organizations/).test(text)) {
+      $(this).remove();
+    } else {
+      $(this).show();
+    }
+  });
+
+  // fade other menu items on hover
+  $('.topic2').on('mouseover', '.dataset-menu-item', function() {
     $('.dataset-menu-item').addClass('unfocused');
     $(this).removeClass('unfocused');
-  }).on('mouseout', '.dataset-menu-item', function() { // restore other menu items
+  }).on('mouseout', '.dataset-menu-item', function() {
     $('.dataset-menu-item').removeClass('unfocused');
   });
 
@@ -24,26 +40,36 @@ $(document).ready(function() {
       top: - 20 - 2 // - 2 to fix arrow position
     };
 
+    var count = 0;
     var menu_items = [];
 
-    _.forEach(datasets, function(dataset, index) {
+    _.forEach(datasets, function(dataset) {
       var url = '/dataset/' + dataset.name + '/resource/' + dataset.resource_id;
 
-      if (index > 4) { // split onto another <ul>
+      if (count > 4) { // split onto another <ul>
         menu.push('<ul>' + menu_items.join('') +'</ul>');
         menu_items = [];
+        count = 0;
+      } else {
+        count++;
       }
 
       menu_items.push('<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>')
     });
 
-    if (datasets.length > 4) {
+    if (menu_items.length) { // absolute so it shows at top instead of bottom
       menu.push('<ul>' + menu_items.join('') +'</ul>');
     }
 
     this$.addClass('active').siblings().addClass('behind-other-topics'); // all but "this"
 
     $('<div class="dataset-menu"><div class="arrow">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
+
+    if (menu.length > 1) {
+      $('.dataset-menu .arrow').css('width', '22rem');
+    } else {
+      $('.dataset-menu .arrow').css('width', '11rem');
+    }
 
     setTimeout(function() {
       // show dataset preview page on link
@@ -62,22 +88,6 @@ $(document).ready(function() {
     if (!wasFocused) {
       $('.dataset-menu').remove();
       $('.topic2').removeClass('active behind-other-topics');
-    }
-  });
-
-  // show topic page on click
-  $('.topic2 img').click(function() {
-    window.location.href = $(this).data().url;
-  });
-
-  // hide Organizations filter
-  $('section.module').each(function() {
-    var text = $(this).text().trim();
-
-    if ((/Organizations/).test(text)) {
-      $(this).remove();
-    } else {
-      $(this).show();
     }
   });
 });

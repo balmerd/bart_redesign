@@ -332,6 +332,7 @@ body, [role="main"], .main {
   height: 52px;
 }
 .behind-other-topics {
+  opacity: 0.6;
   z-index: 1 !important;
 }
 .dataset-menu ul {

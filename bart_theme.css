@@ -267,10 +267,11 @@ body, [role="main"], .main {
 .arrow {
   position: relative;
   width: 0;
+  height: 100%;
   z-index: 999;
 }
 .arrow:before {
-  content: '';
+  content: " ";
   position: absolute;
   top: -1px;
   left: -142px;
@@ -281,7 +282,7 @@ body, [role="main"], .main {
   z-index: 999;
 }
 .arrow:after {
-  content: '';
+  content: " ";
   position: absolute;
   top: -1px;
   left: -142px;
@@ -312,10 +313,10 @@ body, [role="main"], .main {
   background-color: aliceblue;
 }
 .homepage .topic2-container {
-  z-index: 999;
+  z-index: 999; /* so that arrow is under the box */
   padding: 10px 4px;
   position: relative;
-  background-color: inherit; /* so that arrow is under the box */
+  background-color: inherit;
 }
 .homepage .topic2-title {
   margin-top: 5px;

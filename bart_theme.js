@@ -5,29 +5,10 @@ $(document).ready(function() {
   // show menu on hover in
   $('.topic2').hover(function() {
     var this$ = $(this);
-    // var height = this$.height();
     var height = this$.outerHeight();
     var width = this$.outerWidth();
     var position = this$.position();
     var datasets = this$.data().datasets;
-    // var style = 'top:' + (position.top + height + 20) + 'px; left:' + position.left + 'px; width:' + (width - 2) + 'px;';
-    // var style = {
-    //   top: (position.top - 20) + 'px',
-    //   left: (position.left + width) + 'px',
-    //   width: 'auto',
-    //   minWidth: '400px',
-    //   height: (height + 40) + 'px'
-    // };
-
-    console.log(position);
-
-    // var style = {
-    //   top: position.top - 20 - 2, // - 2 to fix arrow
-    //   left: position.left + width + 20,
-    //   width: 'auto',
-    //   minWidth: '10rem',
-    //   height: height + 40 - 2 // minus border
-    // };
 
     var style = {
       top: - 20 - 2, // - 2 to fix arrow
@@ -42,30 +23,30 @@ $(document).ready(function() {
     //   return '<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>';
     // });
 
-    $('.topic2').addClass('behind-other-topics');
-
-    // this$.append('<div class="dataset-menu" style="'+ style+ '">' + menu_items.join('') + '</div>');
-    $('<div class="dataset-menu"><div class="arrow" style="height:100%;">content</div>content</div>').css(style).appendTo(this$);
-
-    this$.removeClass('behind-other-topics');
-
-    setTimeout(function() {
-      // show dataset preview page on link
-      $('.dataset-menu').hover(function() {
-        wasFocused = true;
-      }, function() {
-        wasFocused = false;
-        $('.dataset-menu').remove();
-        $('.topic2').removeClass('behind-other-topics');
-      }).on('click', 'li', function() {
-        window.location.href = $(this).data().url;
-      });
-    }, 10);
+    // $('.topic2').addClass('behind-other-topics');
+    //
+    // // this$.append('<div class="dataset-menu" style="'+ style+ '">' + menu_items.join('') + '</div>');
+    // $('<div class="dataset-menu"><div class="arrow">content here</div></div>').css(style).appendTo(this$);
+    //
+    // this$.removeClass('behind-other-topics');
+    //
+    // setTimeout(function() {
+    //   // show dataset preview page on link
+    //   $('.dataset-menu').hover(function() {
+    //     wasFocused = true;
+    //   }, function() {
+    //     wasFocused = false;
+    //     $('.dataset-menu').remove();
+    //     $('.topic2').removeClass('behind-other-topics');
+    //   }).on('click', 'li', function() {
+    //     window.location.href = $(this).data().url;
+    //   });
+    // }, 10);
   }, function() {
-    if (!wasFocused) {
-      $('.dataset-menu').remove();
-      $('.topic2').removeClass('behind-other-topics');
-    }
+    // if (!wasFocused) {
+    //   $('.dataset-menu').remove();
+    //   $('.topic2').removeClass('behind-other-topics');
+    // }
   });
 
   // show topic page on click

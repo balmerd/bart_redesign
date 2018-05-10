@@ -137,9 +137,6 @@ body, [role="main"], .main {
   float: left;
   height: 5rem;
   margin-bottom: 1rem;
-  /* redesign */
-  z-index: 3;
-  background-color: #0196cd;
 }
 .homepage .topic:hover {
   border-color: #aaa;
@@ -306,11 +303,11 @@ body, [role="main"], .main {
   border: 1px solid #fff; /* not visible, but takes up the space REMOVE THIS */
   margin-bottom: 1rem;
   /* redesign */
-  background-color: #ccc;
+  color: #fff;
+  background-color: #0196cd;
 }
 .homepage .topic2:hover {
-  border-color: #aaa;
-  background-color: aliceblue;
+  opacity: 0.8;
 }
 .homepage .topic2-container {
   z-index: 999; /* so that arrow is under the box */

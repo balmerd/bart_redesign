@@ -277,7 +277,7 @@ body, [role="main"], .main {
   width: 0;
   height: 0;
   border: 71px solid transparent;
-  border-right: 71px solid #008;
+  border-right: 71px solid #0196cd;
   z-index: 999;
 }
 .arrow:after {
@@ -288,13 +288,14 @@ body, [role="main"], .main {
   width: 0;
   height: 0;
   border: 71px solid transparent;
-  border-right: 71px solid #008;
+  border-right: 71px solid #0196cd;
   z-index: 999;
 }
 .homepage .topics-wrapper {
   padding-left: 5rem; /* assumes 940px width */
 }
 .homepage .topic2 {
+  position: relative; /* so we can make z-index: 1 when hovering over another topic */
   display: inline-block;
   margin-right: 0.75rem;
   width: 115px;
@@ -323,4 +324,7 @@ body, [role="main"], .main {
 }
 .homepage .topic2 img {
   height: 50px;
+}
+.behind-other-topics {
+  z-index: 1 !important;
 }

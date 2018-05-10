@@ -19,9 +19,19 @@ $(document).ready(function() {
     //   height: (height + 40) + 'px'
     // };
 
+    console.log(position);
+
+    // var style = {
+    //   top: position.top - 20 - 2, // - 2 to fix arrow
+    //   left: position.left + width + 20,
+    //   width: 'auto',
+    //   minWidth: '10rem',
+    //   height: height + 40 - 2 // minus border
+    // };
+
     var style = {
-      top: position.top - 20 - 2, // - 2 to fix arrow
-      left: position.left + width + 20,
+      top: - 20 - 2, // - 2 to fix arrow
+      left: width + 20,
       width: 'auto',
       minWidth: '10rem',
       height: height + 40 - 2 // minus border
@@ -32,8 +42,12 @@ $(document).ready(function() {
     //   return '<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>';
     // });
 
+    $('.topic2').addClass('behind-other-topics');
+
     // this$.append('<div class="dataset-menu" style="'+ style+ '">' + menu_items.join('') + '</div>');
     $('<div class="dataset-menu"><div class="arrow" style="height:100%;">content</div>content</div>').css(style).appendTo(this$);
+
+    this$.removeClass('behind-other-topics');
 
     setTimeout(function() {
       // show dataset preview page on link
@@ -42,6 +56,7 @@ $(document).ready(function() {
       }, function() {
         wasFocused = false;
         $('.dataset-menu').remove();
+        $('.topic2').removeClass('behind-other-topics');
       }).on('click', 'li', function() {
         window.location.href = $(this).data().url;
       });
@@ -49,6 +64,7 @@ $(document).ready(function() {
   }, function() {
     if (!wasFocused) {
       $('.dataset-menu').remove();
+      $('.topic2').removeClass('behind-other-topics');
     }
   });
 

@@ -57,7 +57,7 @@ $(document).ready(function() {
       menu_items.push('<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>')
     });
 
-    if (menu_items.length) { // absolute so it shows at top instead of bottom
+    if (menu_items.length) { // we got leftovers (TODO: absolute so it shows at top instead of bottom)
       menu.push('<ul>' + menu_items.join('') +'</ul>');
     }
 
@@ -65,11 +65,7 @@ $(document).ready(function() {
 
     $('<div class="dataset-menu"><div class="arrow">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
 
-    if (menu.length > 1) {
-      $('.dataset-menu .arrow').css('width', '22rem');
-    } else {
-      $('.dataset-menu .arrow').css('width', '11rem');
-    }
+    $('.dataset-menu .arrow').css('width', (11 * menu.length) + 'rem'); // base size is 11 rem
 
     setTimeout(function() {
       // show dataset preview page on link

@@ -29,6 +29,7 @@ $(document).ready(function() {
   // show menu on hover in
   $('.topic2').hover(function() {
     var menu = [];
+    var menu_items = [];
     var this$ = $(this);
     var height = this$.outerHeight();
     var width = this$.outerWidth();
@@ -40,26 +41,17 @@ $(document).ready(function() {
       top: - 20 - 2 // - 2 to fix arrow position
     };
 
-    var count = 0;
-    var menu_items = [];
 
-    _.forEach(datasets, function(dataset) {
+    _.forEach(datasets, function(dataset) { // create resource menu
       var url = '/dataset/' + dataset.name + '/resource/' + dataset.resource_id;
-
-      if (count > 4) { // split onto another <ul>
-        menu.push('<ul>' + menu_items.join('') +'</ul>');
-        menu_items = [];
-        count = 0;
-      } else {
-        count++;
-      }
-
       menu_items.push('<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>')
     });
 
-    if (menu_items.length) { // we got leftovers (TODO: absolute so it shows at top instead of bottom)
-      menu.push('<ul>' + menu_items.join('') +'</ul>');
-    }
+// TODO: add class to topic to identify which one should get left menu instead of right
+
+    _.forEach(_.chunk(menu_items, 5), function(links) {
+      menu.push('<div class="pull-left"><ul>' + links.join('') +'</ul></div>');
+    });
 
     this$.addClass('active').siblings().addClass('behind-other-topics'); // all but "this"
 

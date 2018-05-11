@@ -30,10 +30,15 @@ header.module-content {
 }
 
 .masthead {
-  height: 3rem;
-  min-height: 3rem;
-  background-color: #eee;
-  border-bottom: 1px solid #aaa;
+  /* height: 3rem;
+  min-height: 3rem; */
+  /* background-color: #eee;
+  border-bottom: 1px solid #aaa; */
+  /* redesign */
+  height: 60px;
+  min-height: 60px;
+  background-color: #2a2919;
+  /* padding: 10px 0; */
 }
 .masthead .debug { /* hide controller and action names */
   display: none;
@@ -43,32 +48,63 @@ header.module-content {
 }
 .masthead .header-image a.title {
 	display: inline-block;
-	margin-top: 14px;
-  color: #1e1e1e;
+	/* margin-top: 14px; */
+  /* color: #1e1e1e; */
 	font-weight: bold;
-	font-size: 1.25rem;
+	/* font-size: 1.25rem; */
+  /* redesign */
+  color: #eee;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 6px;
+  left: 4.25rem;
 }
 .masthead .header-image a:hover {
   text-decoration: none;
 }
 .masthead .header-image a.logo {
   position: relative;
-  top: 3px;
+  /* top: 3px; */
   float: left;
-  width: 70px;
-  height: 42px;
+  /* width: 70px;
+  height: 42px; */
   background-image: url('./BART_Home_Page_files/bart-header-logo.png');
   background-size: 60px;
   background-repeat: no-repeat;
+  /* redesign */
+  top: 8px;
+  width: 60px;
+  height: 60px;
+}
+/* redesign */
+.masthead .navigation {
+  position: relative;
+  bottom: -28px;
 }
 .masthead .navigation a {
-  color: #1e1e1e !important;
+  /* color: #1e1e1e !important; */
+  /* redesign */
+  color: #ddd !important;
+}
+/* redesign */
+.masthead .navigation a:hover {
+  color: #eee !important;
 }
 .masthead .nav-collapse {
   padding-top: 5px;
 }
 .masthead .site-search {
   margin-top: 4px;
+  /* redesign */
+  position: relative;
+  bottom: -15px;
+}
+/* redesign */
+.masthead .site-search input {
+  background-color: #ddd;
+}
+.masthead .site-search input:hover {
+  background-color: #eee;
 }
 .masthead .container {
   padding: 0.5rem 0;
@@ -86,7 +122,13 @@ header.module-content {
   color: #fff !important;
   background-color: #206b82 !important;
 }
-
+/* redesign */
+.homepage-banner {
+  height: 335px;
+  background-size: cover;
+  background-position: left center;
+  background-image: url('/bart_banner.jpg');
+}
 .site-footer {
   font-size: 0.8rem;
   font-weight: bold;
@@ -166,11 +208,13 @@ header.module-content {
   font-weight: bold;
   text-align: center;
 }
-.homepage .topic-title {
-  margin-top: 5px;
-  font-weight: bold;
-  text-align: center;
+.homepage h1.topic-title { /* redesign */
+  text-align: left;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0.75rem 0 1rem 5rem;
 }
+/* redesign */
 .homepage .topic img {
   max-height: 50px;
 }

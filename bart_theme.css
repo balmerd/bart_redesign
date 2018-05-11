@@ -1,7 +1,7 @@
 body, [role="main"], .main {
   color: #1e1e1e;
-	background-color: #fafafa !important;
-	background-image: none;
+  background-image: none;
+  background-color: #fff !important;
   font-family: Arial,Helvetica,sans-serif;
 }
 
@@ -9,9 +9,26 @@ body, [role="main"], .main {
   display: none !important;
 }
 
-#wrapper { /* for sticky footer -- see: https://css-tricks.com/couple-takes-sticky-footer */
+#wrapper { /* redesign */
+  /* for sticky footer -- see: https://css-tricks.com/couple-takes-sticky-footer */
   min-height: calc(100vh - 5.35em);
-  background-color: #f2f1ee !important;
+  /* background-color: #f2f1ee !important; */
+  /* redesign */
+  background-color: #fff !important;
+}
+
+.wrapper { /* redesign */
+  border: none;
+  box-shadow: none;
+  background-color: #fff !important;
+  background-image: none !important;
+}
+
+header.module-content { /* redesign */
+  background-color: #fff !important;
+}
+.module-content .image { /* redesign */
+  background-color: #0196cd;
 }
 
 .masthead {
@@ -98,9 +115,9 @@ body, [role="main"], .main {
 
 /* Home page */
 
-.homepage [role="main"] {
+.homepage [role="main"] { /* redesign */
   padding-top: 0;
-  background-color: #f2f1ee !important;
+  background-color: #fff !important;
 }
 
 .intro-text {
@@ -114,7 +131,6 @@ body, [role="main"], .main {
 }
 
 /* Topics */
-
 .homepage .topics {
   background-color: #fff;
   padding-top: 1rem !important;
@@ -125,23 +141,32 @@ body, [role="main"], .main {
   width: auto;
   margin: 0 auto;
 }
-.homepage .topic {
-  cursor: pointer;
-  display: table-cell;
-  width: 115px;
-  padding: 10px 4px;
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid #fff; /* not visible, but takes up the space */
-  /* needed for Phase 2 datasets */
-  float: left;
-  height: 5rem;
-  margin-bottom: 1rem;
+.homepage .topics-wrapper {
+  padding-left: 5rem; /* assumes 940px width */
 }
-.homepage .topic:hover {
-  border-color: #aaa;
-  background-color: aliceblue;
-
+.homepage .topic {
+  position: relative; /* so we can make z-index: 1 when hovering over another topic */
+  display: inline-block;
+  margin-right: 0.75rem;
+  width: 115px;
+  height: 6rem;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #fff;
+  background-color: #0196cd;
+  font-size: 0.8rem;
+}
+.homepage .topic-container {
+  z-index: 999; /* so that arrow is under the box */
+  padding: 10px 4px;
+  position: relative;
+  background-color: inherit;
+}
+.homepage .topic-title {
+  margin-top: 5px;
+  font-weight: bold;
+  text-align: center;
 }
 .homepage .topic-title {
   margin-top: 5px;
@@ -151,41 +176,88 @@ body, [role="main"], .main {
 .homepage .topic img {
   max-height: 50px;
 }
+.behind-other-topics {
+  opacity: 0.6;
+  z-index: 1 !important;
+}
 
-.dataset-menu { /* to ckan */
+.dataset-menu {
   position: absolute;
   list-style: none;
   border: 1px solid #aaa;
   border-top: 0;
   background-color: aliceblue;
-  /* z-index: 999; */
-  /* redesign */
   z-index: 2;
   color: #fff;
   border-top: 1px solid #aaa;
   background-color: #0196cd;
   min-height: 140px;
-  /* redesign */
-   width: auto;
-   min-width: 10rem;
+  width: auto;
+  min-width: 10rem;
 }
 .dataset-menu-item {
   margin: 0;
   padding: 0;
   cursor: pointer;
-  /* redesign */
-  /* text-align: left; */
-  /* padding: 2px 4px;
-  border-top: 1px solid #aaa; */
-  /* font-size: 0.7rem; */
 }
-/* redesign */
-/* .dataset-menu-item:hover {
-  background-color: #ccc;
-} */
-/* redesign */
+.dataset-menu ul {
+  list-style: none;
+  margin-left: 0;
+  display: inline-block;
+  max-width: 10rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+.arrow > div:nth-child(1) { /* target only first menu item column */
+  padding-left: 0.9rem;
+}
+.dataset-menu li {
+  line-height: 1rem;
+  padding-bottom: 1rem;
+}
+.dataset-menu li:last-child {
+  padding-bottom: 0.25rem;
+}
+.dataset-menu a {
+  color: #fff;
+}
 .dataset-menu-item.unfocused {
   opacity: 0.6;
+}
+
+/* http://www.cssarrowplease.com/ */
+/* https://stackoverflow.com/questions/16180107/arrow-box-with-css */
+.arrow {
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  text-align: left;
+  z-index: 999;
+  /* width set in css */
+}
+.arrow:before {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  left: -142px;
+  width: 0;
+  height: 0;
+  border: 71px solid transparent;
+  border-right: 71px solid #0196cd;
+  z-index: 999;
+}
+.arrow:after {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  left: -142px;
+  width: 0;
+  height: 0;
+  border: 71px solid transparent;
+  border-right: 71px solid #0196cd;
+  z-index: 999;
+}
+.arrow ul {
+  margin-bottom: 0;
 }
 
 /* Features */
@@ -240,100 +312,10 @@ body, [role="main"], .main {
   display: none;
 }
 
-
 /* from Bootstrap 3 */
 
 .list-unstyled {
   margin-left: 0; /* my mod */
   padding-left: 0;
   list-style: none;
-}
-/* http://www.cssarrowplease.com/ */
-/* https://stackoverflow.com/questions/16180107/arrow-box-with-css */
-.arrow { /* to ckan */
-  position: relative;
-  height: auto;
-  min-height: 100%;
-  text-align: left;
-  z-index: 999;
-  /* width set in css */
-}
-.arrow:before {
-  content: " ";
-  position: absolute;
-  top: -1px;
-  left: -142px;
-  width: 0;
-  height: 0;
-  border: 71px solid transparent;
-  border-right: 71px solid #0196cd;
-  z-index: 999;
-}
-.arrow:after {
-  content: " ";
-  position: absolute;
-  top: -1px;
-  left: -142px;
-  width: 0;
-  height: 0;
-  border: 71px solid transparent;
-  border-right: 71px solid #0196cd;
-  z-index: 999;
-}
-.arrow ul {
-  margin-bottom: 0;
-}
-.homepage .topics-wrapper {
-  padding-left: 5rem; /* assumes 940px width */
-}
-.homepage .topic2 { /* to ckan */
-  position: relative; /* so we can make z-index: 1 when hovering over another topic */
-  display: inline-block;
-  margin-right: 0.75rem;
-  width: 115px;
-  height: 6rem;
-  cursor: pointer;
-  text-align: center;
-  border: 1px solid #fff; /* not visible, but takes up the space REMOVE THIS */
-  margin-bottom: 1rem;
-  /* redesign */
-  color: #fff;
-  background-color: #0196cd;
-  font-size: 0.7rem;
-
-}
-.homepage .topic2-container {
-  z-index: 999; /* so that arrow is under the box */
-  padding: 10px 4px;
-  position: relative;
-  background-color: inherit;
-}
-.homepage .topic2-title {
-  margin-top: 5px;
-  font-weight: bold;
-  text-align: center;
-}
-.homepage .topic2 img {
-  height: 52px;
-}
-.behind-other-topics {
-  opacity: 0.6;
-  z-index: 1 !important;
-}
-.dataset-menu ul {
-  list-style: none;
-  margin-left: 0;
-  display: inline-block;
-  max-width: 10rem;
-  padding: 0.5rem;
-}
-.dataset-menu li {
-  line-height: 1rem;
-  padding-bottom: 1rem;
-}
-.dataset-menu li:last-child {
-  padding-bottom: 0.25rem;
-}
-.dataset-menu a {
-  color: #fff;
 }

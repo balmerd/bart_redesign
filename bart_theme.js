@@ -47,7 +47,7 @@ $(document).ready(function() {
       menu_items.push('<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>')
     });
 
-// TODO: add class to topic to identify which one should get left menu instead of right
+// TODO: need to identify last topic in a row, to get left menu instead of right
 
     _.forEach(_.chunk(menu_items, 5), function(links, index) {
       menu.push('<div class="pull-left"><ul>' + links.join('') +'</ul></div>');

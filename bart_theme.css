@@ -185,7 +185,7 @@ header.module-content {
   width: auto;
   margin: 0 auto;
 } */
-.homepage .topics-wrapper {
+.homepage .topic {
   /* padding-left: 5rem; /* assumes 940px width */ */
 }
 .homepage .topic {
@@ -211,14 +211,16 @@ header.module-content {
   position: relative;
   background-color: inherit;
 }
-.homepage .topic-title { /* applies to topic icons and "Data Topics" */
+.homepage .topic-title { /* applies to topic icons */
   margin-top: 5px;
   font-weight: bold;
   text-align: center;
-  /* redesign (hardcoded font-size)*/
+  /* redesign (hardcoded font-size) */
   font-size: 12.8px;
 }
-.homepage h1.topic-title { /* applies to "Data Topics" */
+/* redesign (change from .topic-title to .topics-header)*/
+.homepage h1.topics-header { /* applies to "Data Topics" */
+  font-weight: bold;
   text-align: left;
   font-size: 2rem;
   margin: 0;
@@ -312,6 +314,39 @@ header.module-content {
   opacity: 0.6;
 }
 
+/* redesign */
+/* Featured section */
+
+.featured-outer {
+  margin-top: 80px;
+  padding: 30px 0;
+  background-color: #0f3658;
+}
+.featured {
+  color: #fff;
+  margin: 0 auto;
+}
+.featured-header {
+  font-weight: bold;
+  text-align: left;
+  font-size: 2rem;
+  margin: 0;
+}
+.featured .text {
+  margin-left: 0;
+  font-size: 12.8px; /* hardcoded */
+  width: 68%; /* so that words break closest to the pdf (but doesn't leave room for icon) */
+}
+.featured .image {
+  position: relative;
+  top: -15px;
+  width: 20%;
+}
+.featured .image a {
+  margin: 0;
+}
+
+/* redesign (delete existing .features) */
 /* Features */
 
 .features { /* redesign */
@@ -413,19 +448,39 @@ header.module-content {
 
 @media (min-width: 980px) { /* bootstrap media breakpoint (6 topics per row) */
   /* container width: 940px */
-  .topics {
+  .topics, .featured {
     width: 788px;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
   /* container width: 724px */
-  .topics {
+  .topics, .featured {
     width: 656px;
   }
 }
 @media (max-width: 767px) { /* bootstrap media breakpoint (4 topics per row) */
   /* container width: auto; */
-  .topics {
+  body {
+    /* bootstrap override */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .topics, .featured {
     width: 524px;
+  }
+  .featured .image {
+    top: 0;
+  }
+}
+@media (max-width: 610px) {
+  .featured {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .featured .text {
+    width: 100%;
+  }
+  .featured .image {
+    display: none;
   }
 }

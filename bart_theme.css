@@ -174,20 +174,28 @@ header.module-content {
 .homepage .topics {
   background-color: #fff;
   padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
+  /* padding-bottom: 1rem !important; */
+  /* redesign */
+  margin: 0 auto;
+  padding-bottom: 0 !important;
 }
-.homepage .topics .row-fluid {
+/* redesign */
+/* .homepage .topics .row-fluid {
   display: table;
   width: auto;
   margin: 0 auto;
-}
+} */
 .homepage .topics-wrapper {
-  padding-left: 5rem; /* assumes 940px width */
+  /* padding-left: 5rem; /* assumes 940px width */ */
 }
 .homepage .topic {
   position: relative; /* so we can make z-index: 1 when hovering over another topic */
   display: inline-block;
-  margin-right: 0.75rem;
+
+  /* redesign */
+  /* margin-right: 0.75rem; */
+  margin-right: 13px;
+
   width: 115px;
   height: 6rem;
   cursor: pointer;
@@ -203,16 +211,18 @@ header.module-content {
   position: relative;
   background-color: inherit;
 }
-.homepage .topic-title {
+.homepage .topic-title { /* applies to topic icons and "Data Topics" */
   margin-top: 5px;
   font-weight: bold;
   text-align: center;
+  /* redesign (hardcoded font-size)*/
+  font-size: 12.8px;
 }
-.homepage h1.topic-title { /* redesign */
+.homepage h1.topic-title { /* applies to "Data Topics" */
   text-align: left;
   font-size: 2rem;
   margin: 0;
-  padding: 0.75rem 0 1rem 5rem;
+  padding: 0.75rem 0 1rem 0; /* left was 5rem; */
 }
 /* redesign */
 .homepage .topic img {
@@ -304,37 +314,76 @@ header.module-content {
 
 /* Features */
 
+.features { /* redesign */
+  /* height: 15rem; */
+  background-color: #0f3658;
+  padding: 20px 0 30px 0;
+}
 .features-title {
   margin-top: 5px;
   font-weight: bold;
   text-align: center;
   margin: 1rem 0;
+  /* redesign */
+  color: #eee;
+  text-align: left;
+  font-size: 2rem;
+  margin: 0;
+  padding-bottom: 1rem;
+  /* padding: 0 0 1rem 5rem; */
 }
-.feature {
+.features-icon { /* redesign */
+  position: relative;
+  top: -20px;
+}
+/* redesign */
+/* .feature {
   min-height: 11rem;
   max-height: 11rem;
+} */
+.feature {
+  color: #eee;
+  /* padding-left: 5rem; */
+  /* redesign */
+  position: relative;
 }
 .feature .text {
-  padding: 1rem;
-  background-color: #fff;
-  min-height: inherit;
-  max-height: inherit;
+  /* redesign */
+  /* padding: 1rem;
+  background-color: #fff; */
+  /* min-height: inherit;
+  max-height: inherit; */
+  /* redesign */
+  margin-left: 0;
+  font-size: 12.8px; /* hardcoded */
+  width: 68%; /* so that words break closest to the pdf (but doesn't leave room for icon) */
 }
-.feature .feature-title {
+/* redesign */
+/* .feature .feature-title {
   font-weight: bold;
   font-size: 1rem;
 }
 .feature .text p {
   padding-top: 0.5rem;
-}
+} */
 .feature .image {
-  padding: 1rem;
+  /* redesign */
+  /* padding: 1rem;
   background-color: #fff;
   background-size: 100% !important;
   background-repeat: no-repeat;
-  background-image: url('./BART_Home_Page_files/kpi-icon.jpg');
-  min-height: inherit;
-  max-height: inherit;
+  background-image: url('./BART_Home_Page_files/kpi-icon.jpg'); */
+  /* min-height: inherit;
+  max-height: inherit; */
+  /* redesign */
+  width: 20%;
+  margin-left: 20px;
+  /* move up */
+  position: relative;
+  top: -30px;
+}
+.feature .image a { /* redesign */
+  margin: 0;
 }
 
 /* Topics list page */
@@ -360,4 +409,23 @@ header.module-content {
   margin-left: 0; /* my mod */
   padding-left: 0;
   list-style: none;
+}
+
+@media (min-width: 980px) { /* bootstrap media breakpoint (6 topics per row) */
+  /* container width: 940px */
+  .topics {
+    width: 788px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
+  /* container width: 724px */
+  .topics {
+    width: 656px;
+  }
+}
+@media (max-width: 767px) { /* bootstrap media breakpoint (4 topics per row) */
+  /* container width: auto; */
+  .topics {
+    width: 524px;
+  }
 }

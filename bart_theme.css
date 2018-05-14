@@ -10,11 +10,6 @@ body, [role="main"], .main {
   font-family: Arial,Helvetica,sans-serif;
 }
 
-#field-sitewide-search {
-  font-size: 0.8rem;
-  border-radius: 15px;
-}
-
 .btn-navbar { /* to expand menu button when window is reduced */
   display: none !important;
 }
@@ -68,8 +63,8 @@ header.module-content {
   top: 8px;
   width: 60px;
   height: 60px;
-  background-image: url('./BART_Home_Page_files/bart-header-logo.png');
   background-size: 60px;
+  background-image: url('/bart-header-logo.png');
   background-repeat: no-repeat;
 }
 .masthead .navigation {
@@ -85,6 +80,12 @@ header.module-content {
 .masthead .nav-collapse {
   padding-top: 5px;
 }
+
+#field-sitewide-search {
+  font-size: 0.8rem;
+  border-radius: 15px;
+}
+
 .masthead .site-search {
   margin-top: 4px;
   position: relative;
@@ -131,15 +132,15 @@ header.module-content {
 } */
 
 .homepage-banner {
-  height: 335px;
+  height: 330px;
   background-size: cover;
-  background-position: left center;
+  background-position: center center;
   background-image: url('/bart_banner.jpg');
 }
 
 .homepage-banner-overlay {
   position: absolute;
-  top: 158px;
+  top: 155px;
   width: 100%;
 }
 .homepage-banner-overlay .inner {
@@ -353,6 +354,35 @@ header.module-content {
   padding-right: 0;
 }
 
+.site-footer-container {
+  margin: 0 auto;
+}
+
+.site-footer {
+  color: #eee;
+  height: auto;
+  padding: 1rem 0;
+  min-height: auto;
+  font-size: 12.8px;
+  font-weight: normal;
+  background-color: #0f3658;
+  overflow: hidden;
+}
+.site-footer .attribution { /* no space between <hr> tags */
+  margin: 0;
+}
+.site-footer .agency-name {
+  color: #eee;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.site-footer .other-links a {
+  padding-right: 2rem;
+}
+.site-footer .other-links a:last-child {
+  padding-right: 0;
+}
+
 /* Topics list page */
 
 .media-item .media-image {
@@ -387,8 +417,6 @@ header.module-content {
   }
 }
 
-/* Media Breakpoints */
-
 @media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
   /* container width: 724px */
   .adjusted-content-size {
@@ -408,18 +436,21 @@ header.module-content {
     left: 5.25rem;
   }
   .homepage-banner {
-    height: 200px;
+    height: 230px;
   }
   .homepage-banner-overlay {
-    top: 90px;
+    top: 110px;
+  }
+  .homepage-banner {
+    background-position: center center;
   }
   .homepage-banner-overlay .content {
-    height: 70px;
+    height: 80px;
   }
   .homepage-banner-overlay .content h1.narrow {
     display: none;
   }
-  .homepage-banner-overlay .content h1.wide { /* for smaller screens */
+  .homepage-banner-overlay .content h1.wide {
     display: block;
   }
   .homepage-banner-overlay .content p {
@@ -443,6 +474,12 @@ header.module-content {
   .masthead .section {
     float: left;
     padding-right: 2rem;
+  }
+  .masthead .header-image a.logo {
+    left: 2rem;
+  }
+  .masthead .header-image a.title {
+    left: 6.25rem;
   }
   .masthead .site-search {
     display: block;
@@ -471,17 +508,14 @@ header.module-content {
 }
 
 @media (max-width: 610px) {
-  .masthead .header-image a.logo {
-    left: 2rem;
-  }
-  .masthead .header-image a.title {
-    left: 6.25rem;
-  }
   .masthead .site-search {
     display: none;
   }
   .homepage-banner {
     height: 100px;
+  }
+  .homepage-banner-overlay {
+    display: none;
   }
   .featured {
     width: 100%;

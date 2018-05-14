@@ -10,6 +10,11 @@ body, [role="main"], .main {
   font-family: Arial,Helvetica,sans-serif;
 }
 
+#field-sitewide-search {
+  font-size: 0.8rem;
+  border-radius: 15px;
+}
+
 .btn-navbar { /* to expand menu button when window is reduced */
   display: none !important;
 }
@@ -35,15 +40,9 @@ header.module-content {
 }
 
 .masthead {
-  /* height: 3rem;
-  min-height: 3rem; */
-  /* background-color: #eee;
-  border-bottom: 1px solid #aaa; */
-  /* redesign */
   height: 60px;
   min-height: 60px;
   background-color: #2a2919;
-  /* padding: 10px 0; */
 }
 .masthead .debug { /* hide controller and action names */
   display: none;
@@ -53,11 +52,7 @@ header.module-content {
 }
 .masthead .header-image a.title {
 	display: inline-block;
-	/* margin-top: 14px; */
-  /* color: #1e1e1e; */
 	font-weight: bold;
-	/* font-size: 1.25rem; */
-  /* redesign */
   color: #eee;
   font-size: 1rem;
   position: absolute;
@@ -68,30 +63,22 @@ header.module-content {
   text-decoration: none;
 }
 .masthead .header-image a.logo {
-  position: relative;
-  /* top: 3px; */
   float: left;
-  /* width: 70px;
-  height: 42px; */
-  background-image: url('./BART_Home_Page_files/bart-header-logo.png');
-  background-size: 60px;
-  background-repeat: no-repeat;
-  /* redesign */
+  position: relative;
   top: 8px;
   width: 60px;
   height: 60px;
+  background-image: url('./BART_Home_Page_files/bart-header-logo.png');
+  background-size: 60px;
+  background-repeat: no-repeat;
 }
-/* redesign */
 .masthead .navigation {
   position: relative;
   bottom: -28px;
 }
 .masthead .navigation a {
-  /* color: #1e1e1e !important; */
-  /* redesign */
   color: #ddd !important;
 }
-/* redesign */
 .masthead .navigation a:hover {
   color: #eee !important;
 }
@@ -100,11 +87,9 @@ header.module-content {
 }
 .masthead .site-search {
   margin-top: 4px;
-  /* redesign */
   position: relative;
   bottom: -15px;
 }
-/* redesign */
 .masthead .site-search input {
   background-color: #ddd;
 }
@@ -127,60 +112,6 @@ header.module-content {
   color: #fff !important;
   background-color: #206b82 !important;
 }
-/* redesign */
-.homepage-banner {
-  height: 335px;
-  background-size: cover;
-  background-position: left center;
-  background-image: url('/bart_banner.jpg');
-}
-.site-footer-container {
-  margin: 0 auto;
-}
-.site-footer {
-  font-size: 0.8rem;
-  /* font-weight: bold; */
-  background-color: #126388; /* complement to intro-text */
-  /* for sticky footer */
-  /* height: 3em; */
-  overflow: hidden;
-  /* padding: 10px 0; */
-  /* redesign */
-  color: #eee;
-  height: auto;
-  padding: 1rem 0;
-  min-height: auto;
-  font-size: 12.8px;
-  font-weight: normal;
-  background-color: #0f3658;
-}
-/* redesign */
-/* .site-footer div.hr {
-  clear: both;
-  margin: 0 0 5px;
-  height: 5px;
-  border-bottom: 1px solid #fafafa;
-} */
-.site-footer .attribution { /* no space between <hr> tags */
-  margin: 0;
-}
-/* redesign */
-.site-footer .agency-name {
-  color: #eee;
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-.site-footer .other-links a {
-  padding-right: 2rem;
-}
-.site-footer .other-links a:last-child {
-  padding-right: 0;
-}
-
-#field-sitewide-search {
-  font-size: 0.8rem;
-  border-radius: 15px;
-}
 
 /* Home page */
 
@@ -189,7 +120,7 @@ header.module-content {
   background-color: #fff !important;
 }
 
-.intro-text {
+/* .intro-text {
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.5rem;
@@ -197,61 +128,68 @@ header.module-content {
   color: #fff;
   background-color: #0b3d64;
   font-style: italic;
+} */
+
+.homepage-banner {
+  height: 335px;
+  background-size: cover;
+  background-position: left center;
+  background-image: url('/bart_banner.jpg');
 }
 
-/* redesign */
-.home-banner-text {
+.homepage-banner-overlay {
   position: absolute;
-  top: 75px;
+  top: 158px;
   width: 100%;
 }
-.home-banner-content {
+.homepage-banner-overlay-wrapper {
+  margin: 0 auto; /* to align with .topics etc.. */
+}
+.homepage-banner-content {
   z-index: 999;
-  width: 440px;
-  padding: 20px;
-  margin: 0 auto;
+  width: 540px;
+  padding: 15px 20px;
+  /* margin: 0 auto; */
   font-size: 12.8px;
   color: #eee;
   background-color: #0f3658;
   opacity: 0.9;
 }
+.homepage-banner-content h1 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+.homepage-banner-content h1.narrow {
+  display: block;
+}
+.homepage-banner-content h1.wide { /* for smaller screens */
+  display: none;
+}
+.homepage-banner-content p {
+  padding: 0;
+  margin: 0
+}
 
 /* Topics */
+
 .homepage .topics {
   background-color: #fff;
+  margin: 0 auto;
   padding-top: 1rem !important;
-  /* padding-bottom: 1rem !important; */
-  /* redesign */
-  margin: 0 auto;
   padding-bottom: 0 !important;
-}
-/* redesign */
-/* .homepage .topics .row-fluid {
-  display: table;
-  width: auto;
-  margin: 0 auto;
-} */
-.homepage .topic {
-  /* padding-left: 5rem; /* assumes 940px width */ */
 }
 .homepage .topic {
   position: relative; /* so we can make z-index: 1 when hovering over another topic */
   display: inline-block;
-
-  /* redesign */
-  /* margin-right: 0.75rem; */
   margin-right: 13px;
-
   width: 115px;
   height: 6rem;
   cursor: pointer;
   text-align: center;
   margin-bottom: 1rem;
-  /* redesign */
-  /* color: #fff; */
   color: #eee;
   background-color: #0196cd;
-  font-size: 0.8rem;
+  font-size: 12.8px;
 }
 .homepage .topic-container {
   z-index: 999; /* so that arrow is under the box */
@@ -261,20 +199,15 @@ header.module-content {
 }
 .homepage .topic-title { /* applies to topic icons */
   margin-top: 5px;
-  font-weight: bold;
   text-align: center;
-  /* redesign (hardcoded font-size) */
-  font-size: 12.8px;
 }
-/* redesign (change from .topic-title to .topics-header)*/
 .homepage h1.topics-header { /* applies to "Data Topics" */
   font-weight: bold;
   text-align: left;
   font-size: 2rem;
   margin: 0;
-  padding: 0.75rem 0 1rem 0; /* left was 5rem; */
+  padding: 0.75rem 0 1rem 0;
 }
-/* redesign */
 .homepage .topic img {
   max-height: 50px;
 }
@@ -362,12 +295,11 @@ header.module-content {
   opacity: 0.6;
 }
 
-/* redesign */
+
 /* Featured section */
 
 .featured-wrapper {
-  margin-top: 80px;
-   margin-bottom: 125px;
+  margin: 30px 0;
   padding: 30px 0;
   background-color: #0f3658;
 }
@@ -394,80 +326,32 @@ header.module-content {
 .featured .image a {
   margin: 0;
 }
-
-/* redesign (delete existing .features) */
-/* Features */
-
-.features { /* redesign */
-  /* height: 15rem; */
+.site-footer-container {
+  margin: 0 auto;
+}
+.site-footer {
+  overflow: hidden;
+  color: #eee;
+  height: auto;
+  padding: 1rem 0;
+  min-height: auto;
+  font-size: 12.8px;
+  font-weight: normal;
   background-color: #0f3658;
-  padding: 20px 0 30px 0;
 }
-.features-title {
-  margin-top: 5px;
-  font-weight: bold;
-  text-align: center;
-  margin: 1rem 0;
-  /* redesign */
-  color: #eee;
-  text-align: left;
-  font-size: 2rem;
+.site-footer .attribution { /* no space between <hr> tags */
   margin: 0;
-  padding-bottom: 1rem;
-  /* padding: 0 0 1rem 5rem; */
 }
-.features-icon { /* redesign */
-  position: relative;
-  top: -20px;
-}
-/* redesign */
-/* .feature {
-  min-height: 11rem;
-  max-height: 11rem;
-} */
-.feature {
+.site-footer .agency-name {
   color: #eee;
-  /* padding-left: 5rem; */
-  /* redesign */
-  position: relative;
-}
-.feature .text {
-  /* redesign */
-  /* padding: 1rem;
-  background-color: #fff; */
-  /* min-height: inherit;
-  max-height: inherit; */
-  /* redesign */
-  margin-left: 0;
-  font-size: 12.8px; /* hardcoded */
-  width: 68%; /* so that words break closest to the pdf (but doesn't leave room for icon) */
-}
-/* redesign */
-/* .feature .feature-title {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
-.feature .text p {
-  padding-top: 0.5rem;
-} */
-.feature .image {
-  /* redesign */
-  /* padding: 1rem;
-  background-color: #fff;
-  background-size: 100% !important;
-  background-repeat: no-repeat;
-  background-image: url('./BART_Home_Page_files/kpi-icon.jpg'); */
-  /* min-height: inherit;
-  max-height: inherit; */
-  /* redesign */
-  width: 20%;
-  margin-left: 20px;
-  /* move up */
-  position: relative;
-  top: -30px;
+.site-footer .other-links a {
+  padding-right: 2rem;
 }
-.feature .image a { /* redesign */
-  margin: 0;
+.site-footer .other-links a:last-child {
+  padding-right: 0;
 }
 
 /* Topics list page */
@@ -495,12 +379,17 @@ header.module-content {
   list-style: none;
 }
 
+/* Media Breakpoints */
+
 @media (min-width: 980px) { /* bootstrap media breakpoint (6 topics per row) */
   /* container width: 940px */
-  .topics, .featured, .site-footer-container {
+  .homepage-banner-overlay-wrapper, .topics, .featured, .site-footer-container {
     width: 788px;
   }
 }
+
+/* breakpoints */
+
 @media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
   /* container width: 724px */
   .masthead .section {
@@ -516,19 +405,32 @@ header.module-content {
   .masthead .header-image a.title {
     left: 5.25rem;
   }
-  .home-banner-text {
-    top: 50px;
-  }
   .homepage-banner {
     height: 200px;
   }
-  .topics, .featured, .site-footer-container {
+  .homepage-banner-overlay {
+    top: 90px;
+  }
+  .homepage-banner-content {
+    height: 70px;
+  }
+  .homepage-banner-content h1.narrow {
+    display: none;
+  }
+  .homepage-banner-content h1.wide { /* for smaller screens */
+    display: block;
+  }
+  .homepage-banner-content p {
+    display: none;
+  }
+  .homepage-banner-overlay-wrapper, .topics, .featured, .site-footer-container {
     width: 656px;
   }
   .site-footer .other-links a {
     padding-right: 2px;
   }
 }
+
 @media (max-width: 767px) { /* bootstrap media breakpoint (4 topics per row) */
   /* container width: auto; */
   body {
@@ -546,14 +448,29 @@ header.module-content {
   .homepage-banner {
     height: 150px;
   }
-  .topics, .featured, .site-footer-container {
+  .homepage-banner-overlay {
+    top: 66px;
+  }
+  .homepage-banner-content {
+    height: 47px;
+  }
+  .homepage-banner-content h1.narrow {
+    display: none;
+  }
+  .homepage-banner-content h1.wide { /* for smaller screens */
+    display: block;
+  }
+  .homepage-banner-content p {
+    display: none;
+  }
+  .homepage-banner-overlay-wrapper, .topics, .featured, .site-footer-container {
     width: 524px;
   }
   .featured .image {
     top: 0;
   }
-  /* less padding on footer others*/
 }
+
 @media (max-width: 610px) {
   .masthead .header-image a.logo {
     left: 2rem;

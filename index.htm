@@ -27,27 +27,14 @@
     <div class="hide"><a href="http://13.57.132.255/#content">Skip to content</a></div>
     <header class="navbar navbar-static-top masthead">
       <div class="container">
-        <!-- redesign -->
-        <!--
-        <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button" aria-label="menu toggle">
-          <span class="fa-bar"></span>
-          <span class="fa-bar"></span>
-          <span class="fa-bar"></span>
-        </button>
-        -->
         <hgroup class="header-image pull-left">
           <a class="logo" href="http://13.57.132.255/" aria-label="logo"></a>
           <a class="title" href="http://13.57.132.255/">Data Portal</a>
         </hgroup>
-        <div class="pull-right" xxx-class="nav-collapse collapse"><!-- redesign(remove collapse, add pull-right) -->
+        <div class="pull-right">
           <nav class="section navigation">
-            <!-- <ul class="nav nav-pills">
-              <li><a href="http://13.57.132.255/dataset">Datasets</a></li><li><a href="http://13.57.132.255/organization">Organizations</a></li><li><a href="http://13.57.132.255/group">Topics</a></li>
-          </ul> -->
             <span class="top-level-nav">
               <a href="http://13.57.132.255/dataset">Datasets</a>
-              <!-- &nbsp;
-              <a href="http://13.57.132.255/organization">Organizations</a> -->
               &nbsp;
               <a href="http://13.57.132.255/group">Topics</a>
             </span>
@@ -67,21 +54,28 @@
         <div class="flash-messages"></div>
       </div>
       <div role="main">
-        <div class="home-banner-text">
-          <div class="home-banner-content">
-            <h1>Your Source for <br>BART Open Data</h1>
-            As part of our ongoing commitment to transparency accountability and citizen
-            engagement, the San Francisco Bay Area Rapid Transit District (BART) has redesigned 
-            this Open Data Portal for you to explore, visualize, download and build new things with BART public data.
-          </div>
-        </div>
         <div class="homepage-banner">
           <!-- train image here -->
         </div>
-        <div class="container xxx-topics"><!-- redesign (remove class) -->
-          <div class="topics"><!-- redesign (added div with class) -->
+        <div class="homepage-banner-overlay">
+          <div class="container">
+            <div class="homepage-banner-overlay-wrapper">
+              <div class="homepage-banner-content">
+                <h1 class="wide">Your Source for BART Open Data</h1>
+                <h1 class="narrow">Your Source<br>for BART Open Data</h1>
+                <p>
+                  As part of our ongoing commitment to transparency, accountability and citizen engagement,
+                  the San Francisco Bay Area Rapid Transit District (BART) has designed this Open Data Portal
+                  for you to explore, visualize, download and build new things with BART public data.
+                <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="topics">
             <h1 class="topics-header">Data Topics</h1>
-            <div class="topic-wrapper"><!-- redesign (rename to topic-wrapper) -->
+            <div class="topic-wrapper">
               <div class="topic" data-datasets="[{&#34;resource_id&#34;: &#34;cbbf00f2-87fd-4d57-bc48-39e0b67ccee1&#34;, &#34;name&#34;: &#34;2015-stations-profile-study-home-origin-cities&#34;, &#34;title&#34;: &#34;2015 BART Stations Profile Study (Home Origin Cities)&#34;}, {&#34;resource_id&#34;: &#34;b15e3832-92ef-4350-a1f4-cf410fa35f72&#34;, &#34;name&#34;: &#34;2015-stations-profile-study-nh-overall&#34;, &#34;title&#34;: &#34;2015 BART Stations Profile Study - Non Home Origin(Overall)&#34;}, {&#34;resource_id&#34;: &#34;a79c7fba-c09c-4f9f-8744-320ccbd58831&#34;, &#34;name&#34;: &#34;customers-2015-sample-size&#34;, &#34;title&#34;: &#34;2015 BART Stations Profile Study - Sample Size by Stations&#34;}, {&#34;resource_id&#34;: &#34;ee27ec12-10a1-49f5-870a-d7c0a1fe8f12&#34;, &#34;name&#34;: &#34;2015-stations-profile-study-nh-access-mode&#34;, &#34;title&#34;: &#34;2015 BART Stations Profile Study Non-Home Origin(Access Mode)&#34;}, {&#34;resource_id&#34;: &#34;57e45e6f-e133-4d26-bab5-2814533522f2&#34;, &#34;name&#34;: &#34;2015-stations-profile-study-access-mode&#34;, &#34;title&#34;: &#34;2015 Bart Stations Profile Study (Access Mode)&#34;}, {&#34;resource_id&#34;: &#34;77336ecf-26a5-4602-a3a4-c13459b2dc96&#34;, &#34;name&#34;: &#34;2015-stations-profile-study-overall&#34;, &#34;title&#34;: &#34;2015 Bart Stations Profile Study (Overall)&#34;}, {&#34;resource_id&#34;: &#34;da7b6f2d-b25f-416e-944f-897165d09cf7&#34;, &#34;name&#34;: &#34;customer-2016-satisfaction-frequency&#34;, &#34;title&#34;: &#34;2016 Customer Satisfaction Frequency&#34;}, {&#34;resource_id&#34;: &#34;c5d4da31-e5e4-4d0b-9377-afc190c8faae&#34;, &#34;name&#34;: &#34;2018-customer-complaint-report&#34;, &#34;title&#34;: &#34;2018 Customer Complaint Report&#34;}, {&#34;resource_id&#34;: &#34;85ada483-6c74-4fc2-8f7c-8692b99b2ca6&#34;, &#34;name&#34;: &#34;2018-daily-q-stats&#34;, &#34;title&#34;: &#34;2018 Daily Q Stats&#34;}, {&#34;resource_id&#34;: &#34;9f663eb5-ad83-4123-832c-1e778995d8f5&#34;, &#34;name&#34;: &#34;experience&#34;, &#34;title&#34;: &#34;Customer Satisfaction&#34;}, {&#34;resource_id&#34;: &#34;d79e8dff-10c7-4494-991c-da14b8e1bf16&#34;, &#34;name&#34;: &#34;customer-satisfaction-historical-attribute-ratings&#34;, &#34;title&#34;: &#34;Customer Satisfaction: Historical Attribute Ratings&#34;}]">
                 <div class="topic-container">
                   <img data-url="/group/customers" src="/topic_icons/icon_customers.png" alt="customers">
@@ -160,7 +154,7 @@
         <div class="featured-wrapper">
           <div class="container">
             <div class="featured">
-              <h1 class="featured-header">Key Performance Indicators</h1>
+              <h1 class="featured-header">Strategic Plan Indicators</h1>
               <div class="pull-left text">
                 BART tracks hundreds of performance measures at all levels of the organization. The most important measures, are organized into eight Strategic Plan Goals. The percentage of satisfied customers with BART has dropped recently due to reliability problems,
                 crowding, and other issues. Similarly, on-time performance has fallen recently due to an aging infrastructure, new safety rules, and increased ridership. There are multiple initiatives such as planned system investments, including new
@@ -172,37 +166,11 @@
             </div>
           </div>
         </div>
-        <div class="features hidden">
-          <div class="container">
-            <!-- <div class="row"> -->
-            <h1 class="features-title">Key Performance Indicators</h1>
-            <!-- <img class="pull-right" src="./kpi-icon.png"> -->
-            <div class="feature">
-              <div class="pull-left text">
-                BART tracks hundreds of performance measures at all levels of the organization. The most important measures, are organized into eight Strategic Plan Goals. The percentange of satisfied customers with BART has dropped recently due to reliability problems,
-                crowding, and other issues. Similarly, on-time performance has fallen recently due to an aging infrastructure, new safety rules, and increased ridership. There are multiple initiatives such as planned system investments, including new
-                train cars, escalator/elevator overhauls, and implementation of Measure RR projects should help to improve customer service over time. Click here, to learn more on the eight Strategic Plan Goals.
-              </div>
-              <div class="pull-left image">
-                <a class="xxx-span2 xxx-image" href="http://qa.bart.gov/kpi" title="http://qa.bart.gov/kpi"><img src="./kpi-icon.png"></a>
-              </div>
-            </div>
-            <!-- </div> -->
-            <!-- <div class="row feature">
-            <div class="span9 text">
-              <div class="feature-title"><a href="http://qa.bart.gov/kpi">Key Performance Indicators</a></div>
-              <p>BART tracks hundreds of performance measures at all levels of the organization. The most important measures, are organized according to eight Strategic Plan Goals. The percentage of satisfied customers with BART has dropped recently due to reliability problems, crowding, and other issues. Similarly, on-time performance has fallen recently due to aging infrastructure, new safety rules, and increased ridership. There are multiple initiatives such as planned system investments, including new train cars, escalator/elevator overhauls, and implementation of Measure RR projects should help to improve customer service over time. <a href="http://qa.bart.gov/kpi" aria-label="Key Performance Indicators">Click here</a>, to learn more on the eight Strategic Plan Goals.</p>
-            </div>
-            <a class="span2 image" href="http://qa.bart.gov/kpi" title="http://qa.bart.gov/kpi" aria-label="Key Performance Indicators"></a>
-          </div> -->
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <footer class="site-footer">
     <div class="container">
-      <!-- redesign -->
       <div class="site-footer-container">
         <div class="row-fluid">
           <div class="pull-left">
@@ -217,10 +185,10 @@
             © 2018 San Francisco Bay Area Rapid Transit District
           </div>
           <div class="pull-right other-links">
-            <a href="http://13.57.132.255/about">Terms of Use</a>
-            <a href="http://13.57.132.255/about">Privacy Policy</a>
-            <a href="http://13.57.132.255/about">Open Data Policy</a>
-            <a href="http://13.57.132.255/about">Contact Us</a>
+            <a href="http://bart.gov/">Terms of Use</a>
+            <a href="http://www.bart.gov/siteinfo/privacy">Privacy Policy</a>
+            <a href="http://bart.gov/">Open Data Policy</a>
+            <a href="http://www.bart.gov/siteinfo/contact">Contact Us</a>
           </div>
         </div>
       </div>

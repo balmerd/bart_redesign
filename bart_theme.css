@@ -387,7 +387,7 @@ header.module-content {
   }
 }
 
-/* breakpoints */
+/* Media Breakpoints */
 
 @media (min-width: 768px) and (max-width: 979px) { /* bootstrap media breakpoint (5 topics per row) */
   /* container width: 724px */

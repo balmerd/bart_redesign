@@ -220,31 +220,22 @@ header.module-content {
   content: " ";
   /* pointer-events: none; */ /* including this will cause the menu to be hidden when we hover over the arrow */
   position: absolute;
+  top: 50%;
   right: 100%;
-	top: 50%;
-	border: solid transparent;
   width: 0;
 	height: 0;
+	border: solid transparent;
 	border-color: transparent;
-	border-right-color: #000; /* 0196cd; */
+	border-right-color: #0196cd;
 	border-width: 69px;
 	margin-top: 0;
   z-index: 999;
 }
 .dataset-menu.left-menu .dataset-menu-container:before { /* right arrow */
-  content: " ";
-  /* pointer-events: none; */
-  position: absolute;
   left: 100%;
-	top: 50%;
 	border: solid transparent;
-	width: 0;
-  height: 0;
-	border-color: transparent;
-	border-left-color: #000; /* 0196cd; */
+	border-left-color: #0196cd;
 	border-width: 69px;
-	margin-top: 0;
-  z-index: 999;
 }
 .dataset-menu-container > div:nth-of-type(1) { /* target only first menu item column */
   padding-left: 0.9rem;

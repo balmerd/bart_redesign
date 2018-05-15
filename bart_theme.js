@@ -1,7 +1,4 @@
 $(document).ready(function() {
-  // var topic$ = $('.topic:nth-child(2)');
-  // topic$.addClass('active').siblings().addClass('behind-other-topics');
-
   // show topic page on click
   $('.topic img').click(function() {
     window.location.href = $(this).data().url;
@@ -26,14 +23,23 @@ $(document).ready(function() {
     var position = this$.position();
     var datasets = this$.data().datasets;
 
-    style = {
-      left: width + 20, // 20 is arrow width (left puts it on )
-      top: -22 // - width + 2 to fix arrow position
-    };
+    var isLastTopicInRow = true;
+    $.each(this$.siblings(), function(key, otherTopic) {
+      if ($(otherTopic).position().left > position.left) {
+        isLastTopicInRow = false;
+      }
+    });
 
-    if (this$.hasClass('last-one')) {
+    console.log('isLastTopicInRow: ' + isLastTopicInRow);
+
+    if (isLastTopicInRow) {
       style = {
         right: width + 20, // 20 is arrow width (left puts it on )
+        top: -22 // - width + 2 to fix arrow position
+      };
+    } else {
+      style = {
+        left: width + 20, // 20 is arrow width (left puts it on )
         top: -22 // - width + 2 to fix arrow position
       };
     }

@@ -1,6 +1,19 @@
 $(document).ready(function() {
+  // var topic$ = $('.topic:nth-child(2)');
+  // topic$.addClass('active').siblings().addClass('behind-other-topics');
+  // var wasFocused = false;
+  //
+  // $('.topic').hover(function() {
+  //   console.log('topic over');
+  //   $('.dataset-menu').hover(function() {
+  //     console.log('menu over');
+  //   }, function() {
+  //     console.log('menu out');
+  //   });
+  // }, function() {
+  //   console.log('topic out');
+  // });
 
-  var wasFocused = false;
 
   // show topic page on click
   $('.topic img').click(function() {
@@ -37,10 +50,19 @@ $(document).ready(function() {
     var datasets = this$.data().datasets;
 
     var style = {
-      left: width + 20, // 20 is arrow width
-      top: - 20 - 2 // - 2 to fix arrow position
+      left: width + 20, // 20 is arrow width (left puts it on )
+      top: -22 // - width + 2 to fix arrow position
     };
 
+    // if (true) {
+    //   style.left -= 502; /* convert 135 to -367 */
+    // }
+
+    // for right narrow
+    // left: 135px
+
+    // for left arrow
+    // left: -367px
 
     _.forEach(datasets, function(dataset) { // create resource menu
       var url = '/dataset/' + dataset.name + '/resource/' + dataset.resource_id;
@@ -55,7 +77,11 @@ $(document).ready(function() {
 
     this$.addClass('active').siblings().addClass('behind-other-topics'); // all but "this"
 
-    $('<div class="dataset-menu"><div class="dataset-menu-container">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
+    if (this$.hasClass('last-one')) {
+      $('<div class="dataset-menu left-menu"><div class="dataset-menu-container">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
+    } else {
+      $('<div class="dataset-menu"><div class="dataset-menu-container">' + menu.join('') +'</div></div>').css(style).appendTo(this$);
+    }
 
     $('.dataset-menu .dataset-menu-container').css('width', (11 * menu.length) + 'rem'); // base size is 11 rem
 

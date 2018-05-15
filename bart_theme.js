@@ -1,34 +1,10 @@
 $(document).ready(function() {
   // var topic$ = $('.topic:nth-child(2)');
   // topic$.addClass('active').siblings().addClass('behind-other-topics');
-  // var wasFocused = false;
-  //
-  // $('.topic').hover(function() {
-  //   console.log('topic over');
-  //   $('.dataset-menu').hover(function() {
-  //     console.log('menu over');
-  //   }, function() {
-  //     console.log('menu out');
-  //   });
-  // }, function() {
-  //   console.log('topic out');
-  // });
-
 
   // show topic page on click
   $('.topic img').click(function() {
     window.location.href = $(this).data().url;
-  });
-
-  // hide Organizations filter
-  $('section.module').each(function() {
-    var text = $(this).text().trim();
-
-    if ((/Organizations/).test(text)) {
-      $(this).remove();
-    } else {
-      $(this).show();
-    }
   });
 
   // fade other menu items on hover
@@ -41,6 +17,7 @@ $(document).ready(function() {
 
   // show menu on hover in
   $('.topic').hover(function() {
+    var style;
     var menu = [];
     var menu_items = [];
     var this$ = $(this);
@@ -49,14 +26,17 @@ $(document).ready(function() {
     var position = this$.position();
     var datasets = this$.data().datasets;
 
-    var style = {
+    style = {
       left: width + 20, // 20 is arrow width (left puts it on )
       top: -22 // - width + 2 to fix arrow position
     };
 
-    // if (true) {
-    //   style.left -= 502; /* convert 135 to -367 */
-    // }
+    if (this$.hasClass('last-one')) {
+      style = {
+        right: width + 20, // 20 is arrow width (left puts it on )
+        top: -22 // - width + 2 to fix arrow position
+      };
+    }
 
     // for right narrow
     // left: 135px
@@ -85,23 +65,8 @@ $(document).ready(function() {
 
     $('.dataset-menu .dataset-menu-container').css('width', (11 * menu.length) + 'rem'); // base size is 11 rem
 
-    setTimeout(function() {
-      // show dataset preview page on link
-      $('.dataset-menu').hover(function() {
-        wasFocused = true;
-      }, function() {
-        wasFocused = false;
-        this$.removeClass('active');
-        $('.dataset-menu').remove();
-        $('.topic').removeClass('behind-other-topics');
-      }).on('click', 'li', function() {
-        window.location.href = $(this).data().url;
-      });
-    }, 10);
   }, function() {
-    if (!wasFocused) {
-      $('.dataset-menu').remove();
-      $('.topic').removeClass('active behind-other-topics');
-    }
+    $('.dataset-menu').remove();
+    $('.topic').removeClass('active behind-other-topics');
   });
 });

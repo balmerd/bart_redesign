@@ -14,7 +14,6 @@ $(document).ready(function() {
 
   // show menu on hover in
   $('.topic').hover(function() {
-    var style;
     var menu = [];
     var menu_items = [];
     var this$ = $(this);
@@ -23,39 +22,26 @@ $(document).ready(function() {
     var position = this$.position();
     var datasets = this$.data().datasets;
 
+    var arrowWidth = 20;
     var isLastTopicInRow = true;
+    var style = { top: -(arrowWidth + 2) }; // - width + 2 to fix arrow position
+
     $.each(this$.siblings(), function(key, otherTopic) {
       if ($(otherTopic).position().left > position.left) {
         isLastTopicInRow = false;
       }
     });
 
-    console.log('isLastTopicInRow: ' + isLastTopicInRow);
-
     if (isLastTopicInRow) {
-      style = {
-        right: width + 20, // 20 is arrow width (left puts it on )
-        top: -22 // - width + 2 to fix arrow position
-      };
+      style.right = width + arrowWidth;
     } else {
-      style = {
-        left: width + 20, // 20 is arrow width (left puts it on )
-        top: -22 // - width + 2 to fix arrow position
-      };
+      style.left = width + arrowWidth;
     }
-
-    // for right narrow
-    // left: 135px
-
-    // for left arrow
-    // left: -367px
 
     _.forEach(datasets, function(dataset) { // create resource menu
       var url = '/dataset/' + dataset.name + '/resource/' + dataset.resource_id;
       menu_items.push('<li class="dataset-menu-item" data-url="' + url + '">' + dataset.title + '</li>')
     });
-
-// TODO: need to identify last topic in a row, to get left menu instead of right
 
     _.forEach(_.chunk(menu_items, 5), function(links, index) {
       menu.push('<div class="pull-left"><ul>' + links.join('') +'</ul></div>');
